@@ -4,11 +4,17 @@ final class Counter{
 
     private static Counter instance = null;
 
+    // private constructor to prevent instantiation
     private Counter(){}
 
+    // static method to get instance
     public static Counter getInstance(){
         if(instance == null){
-            instance = new Counter();
+            synchronized(Counter.class){
+                if(instance == null){
+                    instance = new Counter();
+                }
+            }
         }
         return instance;
     }
@@ -20,13 +26,6 @@ final class Counter{
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // Counter counter = new Counter();
-        // counter.increment();
-        // System.out.println(counter.count);
-        // Counter counter2 = new Counter();
-        // counter2.increment();
-        // System.out.println(counter2.count);
-
         Counter counter = Counter.getInstance();
         counter.increment();
         System.out.println("Counter 1: " + counter.count);
