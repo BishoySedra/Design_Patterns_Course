@@ -2,3 +2,8 @@
 	path = creational_patterns
 	url = https://github.com/BishoySedra/Design_Patterns_Course.git
 	branch = creational
+
+[submodule "structural_patterns"]
+	path = structural_patterns
+	url = https://github.com/BishoySedra/Design_Patterns_Course.git
+	branch = structural
