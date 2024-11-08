@@ -17,7 +17,7 @@ class PlainPizza implements Pizza{
 
 }
 
-abstract class ToppingDecorator extends PlainPizza{
+class ToppingDecorator extends PlainPizza{
     
      protected Pizza tempPizza;   
 
